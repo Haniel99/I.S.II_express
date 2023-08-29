@@ -1,7 +1,9 @@
 const { requiere, response } = require("express");
-const sequelize = require("../../config/config"); 
-let controller = {};
 
+const {Employee} =  require("../../model");
+
+let controller = {};
+//
 controller.index = (req= requiere, res= response) =>{
     res.json('Hello')
 }
