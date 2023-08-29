@@ -1,5 +1,5 @@
 const { requiere, response } = require("express");
-const {query} = require("../../config/mysql"); 
+const sequelize = require("../../config/config"); 
 let controller = {};
 
 controller.index = (req= requiere, res= response) =>{
