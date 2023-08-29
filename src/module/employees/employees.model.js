@@ -4,11 +4,19 @@ const sequelize = require("../../config/config");
 class Employee extends Model {}
 
 Employee.init(
-  {},
+  {
+    nombre: DataTypes.STRING,
+    apellido: DataTypes.STRING,
+    puesto: DataTypes.STRING,
+    salario: DataTypes.INTEGER,
+    departamento: DataTypes.STRING,
+    ubicacion: DataTypes.STRING,
+    telefono: DataTypes.STRING,
+  },
   {
     sequelize,
-    tableName: "",
-    modelName: "",
+    tableName: "employees",
+    modelName: "Employee",
   }
 );
 

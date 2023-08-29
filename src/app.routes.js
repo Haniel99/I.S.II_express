@@ -1,5 +1,8 @@
-const { Router } = require("express");
+const express = require("express");
+const router = express.Router();
 
-const router = Router();
-router.use('/api/v1/employees', require("./module/employees/employees.routes"));
-module.exports = router;
+const employeeRouter = require("./module/employees/employees.routes");
+router.use("/employees", employeeRouter.router);
+
+module.exports = { router };
+
