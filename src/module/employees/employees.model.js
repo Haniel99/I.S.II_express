@@ -9,13 +9,14 @@ Employee.init(
     apellido: DataTypes.STRING,
     puesto: DataTypes.STRING,
     salario: DataTypes.INTEGER,
-    departamento: DataTypes.STRING,
+    departamento_id: DataTypes.INTEGER,
     ubicacion: DataTypes.STRING,
     telefono: DataTypes.STRING,
+    rol_id: DataTypes.INTEGER
   },
   {
     sequelize,
-    tableName: "employees",
+    tableName: "employee",
     modelName: "Employee",
   }
 );

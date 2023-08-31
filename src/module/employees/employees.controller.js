@@ -1,24 +1,21 @@
 const { requiere, response, request } = require("express");
 
-const { Employee } = require("../../app.model");
+const { Employee, Department, Rol } = require("../../app.model");
 
 let controller = {};
 //
 controller.index = async (req = request, res = response) => {
   try {
-    await Employee.create({
-      nombre: "Juan",
-      apellido: "Perez",
-      puesto: "Desarrollador de software",
-      salario: 60000,
-      departamento: "Tecnología",
-      ubicacion: "Ciudad A",
-      telefono: "123-456-7890",
+    
+    const res = await Employee.findAll({
+      include:{
+        model: "Rol",
+        as: "rol" 
+      }
     });
-    console.log(await req.body);
     return res.status(200).json({
       msg: "Exitos",
-      response: req.body,
+      response: res,
     });
   } catch (error) {
     console.log(error);
